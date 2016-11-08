@@ -92,13 +92,13 @@
 <meta property="og:site_name" content="ChiefMage.com">
 <meta property="og:description" content="Go语言开发web应用真是可以用简单快速来形容。最近的项目一直在使用一个开源的框架beego来做，使用开源框架确实提高了开发速度，但是时间长了对go语言的原生的用法有些不熟，所以决定写几篇东西来简单介绍一下go语言web开发，自己也能对go语言原生的用法熟练一下。
 先从最简单的开始第一篇就先实现一个最简单的web服务，编程界流行从 hello world开始，好像确实有他的道理。首先介绍一下go语">
-<meta property="og:image" content="http://yoursite.com/../../../image/result.png">
-<meta property="og:updated_time" content="2016-11-08T11:12:17.673Z">
+<meta property="og:image" content="http://yoursite.com/../../../../image/result.png">
+<meta property="og:updated_time" content="2016-11-08T11:13:37.067Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="go web开发(1)">
 <meta name="twitter:description" content="Go语言开发web应用真是可以用简单快速来形容。最近的项目一直在使用一个开源的框架beego来做，使用开源框架确实提高了开发速度，但是时间长了对go语言的原生的用法有些不熟，所以决定写几篇东西来简单介绍一下go语言web开发，自己也能对go语言原生的用法熟练一下。
 先从最简单的开始第一篇就先实现一个最简单的web服务，编程界流行从 hello world开始，好像确实有他的道理。首先介绍一下go语">
-<meta name="twitter:image" content="http://yoursite.com/../../../image/result.png">
+<meta name="twitter:image" content="http://yoursite.com/../../../../image/result.png">
 
 
 
@@ -298,7 +298,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-check-o"></i>
             </span>
-            <time title="Post modified" itemprop="dateModified" datetime="2016-11-08T19:12:17+08:00">
+            <time title="Post modified" itemprop="dateModified" datetime="2016-11-08T19:13:37+08:00">
               2016-11-08
             </time>
             
@@ -332,7 +332,7 @@
       
         <p>Go语言开发web应用真是可以用简单快速来形容。最近的项目一直在使用一个开源的框架beego来做，使用开源框架确实提高了开发速度，但是时间长了对go语言的原生的用法有些不熟，所以决定写几篇东西来简单介绍一下go语言web开发，自己也能对go语言原生的用法熟练一下。</p>
 <h2 id="先从最简单的开始"><a href="#先从最简单的开始" class="headerlink" title="先从最简单的开始"></a>先从最简单的开始</h2><p>第一篇就先实现一个最简单的web服务，编程界流行从 hello world开始，好像确实有他的道理。<br>首先介绍一下go语言web开发常用的几个包：net、net\http，当然如果你需要做一些调试打印的话可能还需要log包或者fmt包。有兴趣的可以阅读以下go源码。<br>下面首先看代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">package main</div><div class="line">import (</div><div class="line">    &quot;log&quot;</div><div class="line">    &quot;net/http&quot;</div><div class="line">)</div><div class="line">func hello(w http.ResponseWriter,r *http.Request)&#123;</div><div class="line">	w.Write([]byte(&quot;hello world&quot;))</div><div class="line">&#125;</div><div class="line">func main() &#123;</div><div class="line">    http.HandleFunc(&quot;/&quot;, hello) //设置路由</div><div class="line">    err := http.ListenAndServe(&quot;:8080&quot;, nil) //设置监听的端口</div><div class="line">    if err != nil &#123;</div><div class="line">        log.Fatal(&quot;ListenAndServe error: &quot;, err)</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>编译运行，然后打开浏览器，打开地址localhost:8080,可以看到在页面打印出hello world，如下：<img src="../../../image/result.png" alt=""><br>代码很简单也很好理解，ListenAndServe函数是监听端口函数，这里设置的是8080端口，当访问该端口地址的时候就会解析路由，然后执行我们设置的路由函数hello，在页面打印hello world。<br>第一篇就写写到这。。。</p>
+<p>编译运行，然后打开浏览器，打开地址localhost:8080,可以看到在页面打印出hello world，如下：<img src="../../../../image/result.png" alt=""><br>代码很简单也很好理解，ListenAndServe函数是监听端口函数，这里设置的是8080端口，当访问该端口地址的时候就会解析路由，然后执行我们设置的路由函数hello，在页面打印hello world。<br>第一篇就写写到这。。。</p>
 
       
     </div>
