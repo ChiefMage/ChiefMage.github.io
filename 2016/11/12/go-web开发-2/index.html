@@ -85,18 +85,18 @@
 
 
 <meta name="description" content="接着总结一下Go web开发相关知识，这篇文章主要总结一下自定义Handler 实现serveHTTP()方法来动态match路由和静态文件目录的设定。
-##自定义Handler我们自定义一个handler去匹配路由，先看一下代码：12345678910111213141516171819type MyMux struct &amp;#123;&amp;#125;func (m *MyMux) ServeHTTP">
+自定义Handler我们自定义一个handler去匹配路由，先看一下代码：12345678910111213141516171819type MyMux struct &amp;#123;&amp;#125;func (m *MyMux) ServeHTTP(w">
 <meta property="og:type" content="article">
 <meta property="og:title" content="go web开发(2)">
 <meta property="og:url" content="http://yoursite.com/2016/11/12/go-web开发-2/index.html">
 <meta property="og:site_name" content="ChiefMage.com">
 <meta property="og:description" content="接着总结一下Go web开发相关知识，这篇文章主要总结一下自定义Handler 实现serveHTTP()方法来动态match路由和静态文件目录的设定。
-##自定义Handler我们自定义一个handler去匹配路由，先看一下代码：12345678910111213141516171819type MyMux struct &amp;#123;&amp;#125;func (m *MyMux) ServeHTTP">
-<meta property="og:updated_time" content="2016-11-12T08:35:24.361Z">
+自定义Handler我们自定义一个handler去匹配路由，先看一下代码：12345678910111213141516171819type MyMux struct &amp;#123;&amp;#125;func (m *MyMux) ServeHTTP(w">
+<meta property="og:updated_time" content="2016-11-14T00:59:08.153Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="go web开发(2)">
 <meta name="twitter:description" content="接着总结一下Go web开发相关知识，这篇文章主要总结一下自定义Handler 实现serveHTTP()方法来动态match路由和静态文件目录的设定。
-##自定义Handler我们自定义一个handler去匹配路由，先看一下代码：12345678910111213141516171819type MyMux struct &amp;#123;&amp;#125;func (m *MyMux) ServeHTTP">
+自定义Handler我们自定义一个handler去匹配路由，先看一下代码：12345678910111213141516171819type MyMux struct &amp;#123;&amp;#125;func (m *MyMux) ServeHTTP(w">
 
 
 
@@ -296,8 +296,8 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-check-o"></i>
             </span>
-            <time title="Post modified" itemprop="dateModified" datetime="2016-11-12T16:35:24+08:00">
-              2016-11-12
+            <time title="Post modified" itemprop="dateModified" datetime="2016-11-14T08:59:08+08:00">
+              2016-11-14
             </time>
             
           </span>
@@ -329,13 +329,13 @@
 
       
         <p>接着总结一下Go web开发相关知识，这篇文章主要总结一下自定义Handler 实现serveHTTP()方法来动态match路由和静态文件目录的设定。</p>
-<p>##自定义Handler<br>我们自定义一个handler去匹配路由，先看一下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">type MyMux struct &#123;</div><div class="line">&#125;</div><div class="line">func (m *MyMux) ServeHTTP(w http.ResponseWriter, r *http.Request) &#123;</div><div class="line">    switch r.URL.Path &#123;</div><div class="line">    case &quot;/&quot;:</div><div class="line">        sayhelloName(w, r)</div><div class="line">        return</div><div class="line">    case &quot;/login&quot;:</div><div class="line">        login(w, r)</div><div class="line">    case &quot;/static&quot;:</div><div class="line">        //log.Println(r.URL.Path)</div><div class="line">        static := http.StripPrefix(&quot;/static&quot;, http.FileServer(http.Dir(&quot;./static&quot;)))</div><div class="line">        static.ServeHTTP(w, r)</div><div class="line">    default:</div><div class="line">        http.NotFound(w, r)</div><div class="line">        return</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="自定义Handler"><a href="#自定义Handler" class="headerlink" title="自定义Handler"></a>自定义Handler</h2><p>我们自定义一个handler去匹配路由，先看一下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">type MyMux struct &#123;</div><div class="line">&#125;</div><div class="line">func (m *MyMux) ServeHTTP(w http.ResponseWriter, r *http.Request) &#123;</div><div class="line">    switch r.URL.Path &#123;</div><div class="line">    case &quot;/&quot;:</div><div class="line">        sayhelloName(w, r)</div><div class="line">        return</div><div class="line">    case &quot;/login&quot;:</div><div class="line">        login(w, r)</div><div class="line">    case &quot;/static&quot;:</div><div class="line">        //log.Println(r.URL.Path)</div><div class="line">        static := http.StripPrefix(&quot;/static&quot;, http.FileServer(http.Dir(&quot;./static&quot;)))</div><div class="line">        static.ServeHTTP(w, r)</div><div class="line">    default:</div><div class="line">        http.NotFound(w, r)</div><div class="line">        return</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>这是我们自定义的handler，进行路由匹配，匹配到后就会执行相应的方法。然后我们在main函数中创建监听<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mux := &amp;MyMux&#123;&#125;</div><div class="line">http.ListenAndServe(&quot;:9090&quot;, mux)</div></pre></td></tr></table></figure></p>
 <p>这样就实现了自定义路由匹配，不必要把所有的匹配规则都写到main方法中。</p>
-<p>##设置静态目录<br>设置静态目录的方法很简单，只要如下一行代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">func main() &#123;</div><div class="line">    http.Handle(&quot;/static/&quot;, http.StripPrefix(&quot;/static/&quot;, http.FileServer(http.Dir(&quot;./static&quot;))))</div><div class="line"></div><div class="line">    err := http.ListenAndServe(&quot;:9090&quot;, nil)</div><div class="line">    if err != nil &#123;</div><div class="line">        log.Fatal(&quot;ListenAndServe: &quot;, err)</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="设置静态目录"><a href="#设置静态目录" class="headerlink" title="设置静态目录"></a>设置静态目录</h2><p>设置静态目录的方法很简单，只要如下一行代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">func main() &#123;</div><div class="line">    http.Handle(&quot;/static/&quot;, http.StripPrefix(&quot;/static/&quot;, http.FileServer(http.Dir(&quot;./static&quot;))))</div><div class="line"></div><div class="line">    err := http.ListenAndServe(&quot;:9090&quot;, nil)</div><div class="line">    if err != nil &#123;</div><div class="line">        log.Fatal(&quot;ListenAndServe: &quot;, err)</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>这样就设置成功了，打开浏览器访问该目录就可以查看结果。<br>但是如果自定义handler怎么设置静态目录呢，其实在前面的代码中我们已经写过了，就是这一段：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">case &quot;/static&quot;:</div><div class="line">        static := http.StripPrefix(&quot;/static&quot;, http.FileServer(http.Dir(&quot;./static&quot;)))</div><div class="line">        static.ServeHTTP(w, r)</div></pre></td></tr></table></figure></p>
 <p>这样就可以在我们自定义的Handler中设置静态目录。</p>
-<p>##总结<br>用Go实现http服务很简单，运用上面的方法可以快速实现一个静态web服务器，有时间写一下。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>用Go实现http服务很简单，运用上面的方法可以快速实现一个静态web服务器，有时间写一下。</p>
 
       
     </div>
@@ -425,8 +425,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://ofsr2czi9.bkt.clouddn.com/chiefmage.jpg"
@@ -505,6 +514,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义Handler"><span class="nav-number">1.</span> <span class="nav-text">自定义Handler</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置静态目录"><span class="nav-number">2.</span> <span class="nav-text">设置静态目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
     </div>
