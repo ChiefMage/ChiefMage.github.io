@@ -84,16 +84,19 @@
 
 
 
-<meta name="description" content="One More Ounce">
+<meta name="description" content="##Go模板的使用Go语言提供了模板处理包：text/template，使用非常简单，简单介绍一些基本使用方法。
+###string替换。1234567891011121314151617181920package mainimport (    &amp;quot;os&amp;quot;    &amp;quot;text/template&amp;quot;)func main() &amp;#123;    name := &amp;q">
 <meta property="og:type" content="article">
 <meta property="og:title" content="go web开发(3)">
 <meta property="og:url" content="http://yoursite.com/2016/12/06/go-web开发-3/index.html">
 <meta property="og:site_name" content="ChiefMage.com">
-<meta property="og:description" content="One More Ounce">
-<meta property="og:updated_time" content="2016-12-06T02:12:32.183Z">
+<meta property="og:description" content="##Go模板的使用Go语言提供了模板处理包：text/template，使用非常简单，简单介绍一些基本使用方法。
+###string替换。1234567891011121314151617181920package mainimport (    &amp;quot;os&amp;quot;    &amp;quot;text/template&amp;quot;)func main() &amp;#123;    name := &amp;q">
+<meta property="og:updated_time" content="2016-12-06T02:15:21.284Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="go web开发(3)">
-<meta name="twitter:description" content="One More Ounce">
+<meta name="twitter:description" content="##Go模板的使用Go语言提供了模板处理包：text/template，使用非常简单，简单介绍一些基本使用方法。
+###string替换。1234567891011121314151617181920package mainimport (    &amp;quot;os&amp;quot;    &amp;quot;text/template&amp;quot;)func main() &amp;#123;    name := &amp;q">
 
 
 
@@ -293,7 +296,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-check-o"></i>
             </span>
-            <time title="Post modified" itemprop="dateModified" datetime="2016-12-06T10:12:32+08:00">
+            <time title="Post modified" itemprop="dateModified" datetime="2016-12-06T10:15:21+08:00">
               2016-12-06
             </time>
             
@@ -325,7 +328,13 @@
       
 
       
-        
+        <p>##Go模板的使用<br>Go语言提供了模板处理包：text/template，使用非常简单，简单介绍一些基本使用方法。</p>
+<p>###string替换。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">package main</div><div class="line"></div><div class="line">import (</div><div class="line">    &quot;os&quot;</div><div class="line">    &quot;text/template&quot;</div><div class="line">)</div><div class="line"></div><div class="line">func main() &#123;</div><div class="line">    name := &quot;world&quot;</div><div class="line">    tmpl, err := template.New(&quot;test&quot;).Parse(&quot;hello, &#123;&#123;.&#125;&#125;&quot;) //创建一个模板，内容是&quot;hello, &#123;&#123;.&#125;&#125;&quot;</div><div class="line">    if err != nil &#123;</div><div class="line">            panic(err)</div><div class="line">    &#125;</div><div class="line">    err = tmpl.Execute(os.Stdout, name)</div><div class="line">    //string与模板合成，变量name的内容会替换掉&#123;&#123;.&#125;&#125;</div><div class="line">    //合成结果输出到os.Stdout</div><div class="line">    if err != nil &#123;</div><div class="line">            panic(err)</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>当然也可以传入struct，传入struct与string替换没有本质的区别。</p>
+<p>###模板文件<br>在实际使用中我们很少直接将模板放入代码中，而是写html文件，这就用到了模板文件的解析。<br>使用template.ParseFiles方法可以解析模板文件。如：<br><code>tmpl, err := template.ParseFiles(&quot;test.html&quot;)</code></p>
+<p>###模板输出<br>模板的输出，使用ExecuteTemplate和Execute，模板下有多套模板，其中有一套模板是当前模板也可以使用Name的方式查看当前模板<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">err = tmpl.ExecuteTemplate(os.Stdout, &quot;test&quot;, sweaters)</div><div class="line">err = tmpl.Execute(os.Stdout, sweaters)  //如果模板名省略，打印的是当前模板</div></pre></td></tr></table></figure></p>
+<p>这里只是介绍模板的最基本用法，golang提供的模板包功能还有很多，可以使用判断、遍历等语句，还有关于模板的复用，模板的嵌套等，后续有时间再详细介绍。</p>
+
       
     </div>
 
