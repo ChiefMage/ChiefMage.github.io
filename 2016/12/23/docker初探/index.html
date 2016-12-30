@@ -94,7 +94,7 @@ Docker是一个开源的应用容器引擎，基于 Go 语言 并遵从Apache2.0
 <meta property="og:description" content="Docker最近貌似很火的样子，本着生命在于折腾的态度，我也来玩一玩。在开始玩了一下之后，感觉Docker还真不错，先看一下Docker到底是什么东西。
 
 Docker是一个开源的应用容器引擎，基于 Go 语言 并遵从Apache2.0协议开源。Docker可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的Linux机器上，也可以实现虚拟化。容器是完全使用沙箱机">
-<meta property="og:updated_time" content="2016-12-23T01:42:03.647Z">
+<meta property="og:updated_time" content="2016-12-30T02:22:20.636Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="docker初探">
 <meta name="twitter:description" content="Docker最近貌似很火的样子，本着生命在于折腾的态度，我也来玩一玩。在开始玩了一下之后，感觉Docker还真不错，先看一下Docker到底是什么东西。
@@ -299,8 +299,8 @@ Docker是一个开源的应用容器引擎，基于 Go 语言 并遵从Apache2.0
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-check-o"></i>
             </span>
-            <time title="Post modified" itemprop="dateModified" datetime="2016-12-23T09:42:03+08:00">
-              2016-12-23
+            <time title="Post modified" itemprop="dateModified" datetime="2016-12-30T10:22:20+08:00">
+              2016-12-30
             </time>
             
           </span>
@@ -336,7 +336,7 @@ Docker是一个开源的应用容器引擎，基于 Go 语言 并遵从Apache2.0
 <p>Docker是一个开源的应用容器引擎，基于 Go 语言 并遵从Apache2.0协议开源。Docker可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的Linux机器上，也可以实现虚拟化。容器是完全使用沙箱机制，相互之间不会有任何接口,更重要的是容器性能开销极低。</p>
 </blockquote>
 <p>下面把docker的配置安装以及常用命令简单介绍一下。本人用的是ubuntu14.04 64位系统，其他版本的linux系统只是安装命令稍有差距。</p>
-<h3 id="Docker下载安装"><a href="#Docker下载安装" class="headerlink" title="Docker下载安装"></a>Docker下载安装</h3><p>首先Docker要求Ubuntu系统的内核版本高于3.10，你需要先验证你的Ubuntu版本是否支持Docker。ubuntu自带Docker，可以直接安装使用，但是使用的版本较低，所以我们不推荐使用自带的，我们去获取最新的版本（本人可能有强迫症，只要新版不存在重大bug的情况下，都是喜欢用新版本/~/~/~）。输入以下命令来获取最新的Docker。<code>wget -qO- https://get.docker.com/ | sh</code>，然后就会下载docker及其依赖包。如果没有错误提示应该就安装成功了。</p>
+<h3 id="Docker下载安装"><a href="#Docker下载安装" class="headerlink" title="Docker下载安装"></a>Docker下载安装</h3><p>首先Docker要求Ubuntu系统的内核版本高于3.10，你需要先验证你的Ubuntu版本是否支持Docker。ubuntu自带Docker，可以直接安装使用，但是使用的版本较低，所以我们不推荐使用自带的，我们去获取最新的版本（本人可能有强迫症，只要新版不存在重大bug的情况下，都是喜欢用新版本~~）。输入以下命令来获取最新的Docker。<code>wget -qO- https://get.docker.com/ | sh</code>，然后就会下载docker及其依赖包。如果没有错误提示应该就安装成功了。</p>
 <h3 id="启动docker后台服务"><a href="#启动docker后台服务" class="headerlink" title="启动docker后台服务"></a>启动docker后台服务</h3><p>输入以下命令启动服务，<code>sudo service docker start</code>启动完成后可以使用ps命令查看docker运行情况。然后可以运行hello-world，输入以下命令，<code>docker run hello-world</code>,如果出现如下提示，</p>
 <blockquote>
 <p>Hello from Docker!<br>This message shows that your installation appears to be working correctly.</p>
