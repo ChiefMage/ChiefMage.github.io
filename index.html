@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next muse use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -27,9 +27,12 @@
 
 
 
+
+
+
   
   
-  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -63,7 +66,7 @@
 
 
 
-<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
@@ -77,7 +80,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/images/chiefmage.ico?v=5.1.0" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
 
 
 
@@ -100,8 +103,8 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Pisces',
-    sidebar: {"position":"left","display":"always"},
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
     motion: true,
     duoshuo: {
@@ -142,36 +145,44 @@
 
 
 
+
+
+
+
   
   
     
   
 
-  <div class="container one-collumn sidebar-position-left 
+  <div class="container sidebar-position-left 
    page-home 
  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-meta ">
-  
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
 
-  <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <span class="site-title">ChiefMage.com</span>
-      <span class="logo-line-after"><i></i></span>
-    </a>
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ChiefMage.com</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">我的一亩三分地</p>
+      
   </div>
-  <p class="site-subtitle">我的一亩三分地</p>
-</div>
 
-<div class="site-nav-toggle">
-  <button>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-  </button>
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
 
 <nav class="site-nav">
@@ -187,16 +198,6 @@
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            关于
           </a>
         </li>
       
@@ -249,20 +250,17 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/21/etcd集群搭建/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/21/etcd集群搭建/">
 
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="ChiefMage">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="http://ofsr2czi9.bkt.clouddn.com/chiefmage.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="ChiefMage.com">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="ChiefMage.com" src="">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ChiefMage">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
-  </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ChiefMage.com">
+    </span>
 
     
       <header class="post-header">
@@ -284,22 +282,20 @@
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-21T16:58:20+08:00">
-              2017-02-21
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-21T16:58:20+08:00">
+                2017-02-21
+              </time>
+            
 
-            &nbsp;|&nbsp;
+            
 
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-check-o"></i>
-            </span>
-            <time title="Post modified" itemprop="dateModified" datetime="2017-02-24T14:24:12+08:00">
-              2017-02-24
-            </time>
             
           </span>
 
@@ -310,12 +306,12 @@
           
 
           
-
-          
           
 
           
+
           
+
           
 
         </div>
@@ -331,15 +327,22 @@
       
         
           
-          etcd是一个应用在分布式环境下的key/value存储服务，可以到Github详细了解该项目,最近由于项目需要了解了一下，要想使用首先从环境搭建开始，本文根据官方介绍对etcd集群的搭建做一个简单总
-          ...
-          <!--noindex-->
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2017/02/21/etcd集群搭建/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+            <p>etcd是一个应用在分布式环境下的key/value存储服务，可以到<a href="https://github.com/coreos/etcd" target="_blank" rel="external">Github</a>详细了解该项目,最近由于项目需要了解了一下，要想使用首先从环境搭建开始，本文根据官方介绍对etcd集群的搭建做一个简单总结。</p>
+<h2 id="单节点运行"><a href="#单节点运行" class="headerlink" title="单节点运行"></a>单节点运行</h2><p>首先去官方发布的地址下载对应的二进制文件。当然也可以下载源码自己编译，要注意版本。得到二进制文件后执行以下命令就可以以默认配置运行etcd。<br><code>./bin/etcd</code><br>默认侦听端口2379上的客户端通信和端口2380上的服务器到服务器通信，单节点不会用到。<br>执行完毕后可以做一个简单的测试，设置一对键值，执行如下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$./bin/etcdctl set name test  </div><div class="line">test</div></pre></td></tr></table></figure></p>
+<p>设置成功，获取该键值：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ ./bin/etcdctl get name</div><div class="line">test</div></pre></td></tr></table></figure></p>
+<h2 id="集群部署"><a href="#集群部署" class="headerlink" title="集群部署"></a>集群部署</h2><p>我们可以通过单机上的不同端口来模拟多台设备，部署一个伪集群当然实际生产环境不会这样使用。</p>
+<h3 id="配置说明"><a href="#配置说明" class="headerlink" title="配置说明"></a>配置说明</h3><p>–name<br>etcd集群中的节点名，不重复就行<br>–listen-peer-urls<br>监听的用于节点之间通信的url，可监听多个，集群内部将通过这些url进行数据交互<br>–initial-advertise-peer-urls<br>用于节点之间通信的url，节点间将以该值进行通信。<br>–listen-client-urls<br>监听客户端通信的url,同样可以监听多个。<br>–advertise-client-urls<br>客户端通信url<br>–initial-cluster-token<br>etcd集群的初始集群标记。<br>设置该值后集群将生成唯一id,并为每个节点也生成唯一id,当使用相同配置文件再启动一个集群时，只要该token值不一样，etcd集群就不会相互影响。可以防止运行多个集群时无意中发生的跨集群交互。<br>–initial-cluster<br>也就是集群中所有的initial-advertise-peer-urls 的合集<br>–initial-cluster-state<br>初始集群状态 (new代表新建)</p>
+<h3 id="静态配置"><a href="#静态配置" class="headerlink" title="静态配置"></a>静态配置</h3><p>我们以如下配置启动三个节点，组成集群：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">etcd --name machine0 --initial-advertise-peer-urls http://192.168.1.102:2381 \</div><div class="line">  --listen-peer-urls http://0.0.0.0:2381 \</div><div class="line">  --listen-client-urls http://0.0.0.0:2379,http://127.0.0.1:4001 \</div><div class="line">  --advertise-client-urls http://192.168.1.102:2379 \</div><div class="line">  --initial-cluster-token etcd-cluster-token \</div><div class="line">  --initial-cluster machine0=http://192.168.1.102:2381,machine1=http://192.168.1.102:2382,machine2=http://192.168.1.102:2383 \</div><div class="line">  --initial-cluster-state new</div><div class="line"></div><div class="line">etcd --name machine1 --initial-advertise-peer-urls http://192.168.1.102:2382 \</div><div class="line">  --listen-peer-urls http://0.0.0.0:2382 \</div><div class="line">  --listen-client-urls http://0.0.0.0:2380,http://127.0.0.1:4002 \</div><div class="line">  --advertise-client-urls http://192.168.1.102:2280 \</div><div class="line">  --initial-cluster-token etcd-cluster-token \</div><div class="line">  --initial-cluster machine0=http://192.168.1.102:2381,machine1=http://192.168.1.102:2382,machine2=http://192.168.1.102:2383 \</div><div class="line">  --initial-cluster-state new</div><div class="line"></div><div class="line">etcd --name machine2 --initial-advertise-peer-urls http://192.168.1.102:2383 \</div><div class="line">  --listen-peer-urls http://0.0.0.0:2383 \</div><div class="line">  --listen-client-urls http://0.0.0.0:2378,http://127.0.0.1:4003 \</div><div class="line">  --advertise-client-urls http://192.168.1.102:2281 \</div><div class="line">  --initial-cluster-token etcd-cluster-token \</div><div class="line">  --initial-cluster machine0=http://192.168.1.102:2381,machine1=http://192.168.1.102:2382,machine2=http://192.168.1.102:2383 \</div><div class="line">  --initial-cluster-state new</div></pre></td></tr></table></figure></p>
+<p>按如上配置依次启动启动成功后,将会进入集群选举状态，选举出leader。根据具体情况改动配置运行。如果多台机器间通信失败，请检查网络配置。<br>可以使用<code>etcdctl member list</code>命令查看集群成员。</p>
+<h3 id="etcd发现"><a href="#etcd发现" class="headerlink" title="etcd发现"></a>etcd发现</h3><p>在多种情况下，可能不会提前知道群集对等点的IP。这在使用云提供商或网络使用DHCP时很常见。在这些情况下，不是指定静态配置，而是使用现有的etcd集群来引导新的集群。这个过程称为“发现”。<br>使用现有集群进行引导，首先在已经搭建好的etcd中设置discovery URL。如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$  curl -X PUT http://10.29.205.175:2379/v2/keys/discovery/6c007a14875d53d9bf0ef5a6fc0257c817f0fb83/_config/size -d value=3</div></pre></td></tr></table></figure></p>
+<p>通过这一命令创建一个发现URL，其预期集群大小为3。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;&quot;action&quot;:&quot;set&quot;,&quot;node&quot;:&#123;&quot;key&quot;:&quot;/discovery/6c007a14875d53d9bf0ef5a6fc0257c817f0fb83/_config/size&quot;,&quot;value&quot;:&quot;3&quot;,&quot;modifiedIndex&quot;:9,&quot;createdIndex&quot;:9&#125;&#125;</div></pre></td></tr></table></figure></p>
+<p>如上，创建成功后可按如下配置启动各节点：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">etcd --name infra0 --initial-advertise-peer-urls http://10.29.204.219:2381 \</div><div class="line">  --listen-peer-urls http://0.0.0.0:2381 \</div><div class="line">  --listen-client-urls http://0.0.0.0:2379,http://127.0.0.1:4001 \</div><div class="line">  --advertise-client-urls http://10.29.204.219:2379 \</div><div class="line">  --discovery http://10.29.205.175:2379/v2/keys/discovery/6c007a14875d53d9bf0ef5a6fc0257c817f0fb83</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">etcd --name infra1 --initial-advertise-peer-urls http://10.29.204.219:2382 \</div><div class="line">  --listen-peer-urls http://0.0.0.0:2382 \</div><div class="line">  --listen-client-urls http://0.0.0.0:2380,http://127.0.0.1:4002 \</div><div class="line">  --advertise-client-urls http://10.29.204.219:2280 \</div><div class="line">  --discovery http://10.29.205.175:2379/v2/keys/discovery/6c007a14875d53d9bf0ef5a6fc0257c817f0fb83</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">etcd --name infra2 --initial-advertise-peer-urls http://10.29.204.219:2383 \</div><div class="line">  --listen-peer-urls http://0.0.0.0:2383 \</div><div class="line">  --listen-client-urls http://0.0.0.0:2378,http://127.0.0.1:4003 \</div><div class="line">  --advertise-client-urls http://10.29.204.219:2281 \</div><div class="line">  --discovery http://10.29.205.175:2379/v2/keys/discovery/6c007a14875d53d9bf0ef5a6fc0257c817f0fb83</div></pre></td></tr></table></figure>
+<p>所有etcd均注册到用于发现的url后，独立的各节点将形成集群。<br>如果没有可用的独立集群，可以使用托管在discovery.etcd.io的公共发现服务。要使用“新”端点创建私有发现URL，请使用命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">curl https://discovery.etcd.io/new?size=3</div><div class="line">https://discovery.etcd.io/3e86b59982e49066c5d813af1c2e2579cbf573de</div></pre></td></tr></table></figure></p>
+<p>然后将返回的url替换上面的 –discovery部分，启动各个节点etcd，建立集群。</p>
+
+          
         
       
     </div>
@@ -352,8 +355,13 @@
       
     </div>
 
+    <div>
+      
+    </div>
 
     <footer class="post-footer">
+      
+
       
 
       
@@ -376,20 +384,17 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/07/我回来了/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/07/我回来了/">
 
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="ChiefMage">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="http://ofsr2czi9.bkt.clouddn.com/chiefmage.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="ChiefMage.com">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="ChiefMage.com" src="">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ChiefMage">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
-  </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ChiefMage.com">
+    </span>
 
     
       <header class="post-header">
@@ -411,22 +416,20 @@
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-07T15:11:41+08:00">
-              2017-02-07
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-07T15:11:41+08:00">
+                2017-02-07
+              </time>
+            
 
-            &nbsp;|&nbsp;
+            
 
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-check-o"></i>
-            </span>
-            <time title="Post modified" itemprop="dateModified" datetime="2017-02-07T15:30:12+08:00">
-              2017-02-07
-            </time>
             
           </span>
 
@@ -437,12 +440,12 @@
           
 
           
-
-          
           
 
           
+
           
+
           
 
         </div>
@@ -458,16 +461,9 @@
       
         
           
-          新年过完了，重新开始。…
+            <p>新年过完了，重新开始。<br>…</p>
 
           
-          <!--noindex-->
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2017/02/07/我回来了/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
         
       
     </div>
@@ -480,8 +476,13 @@
       
     </div>
 
+    <div>
+      
+    </div>
 
     <footer class="post-footer">
+      
+
       
 
       
@@ -504,20 +505,17 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/11/使用dockerfile构建镜像/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/11/使用dockerfile构建镜像/">
 
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="ChiefMage">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="http://ofsr2czi9.bkt.clouddn.com/chiefmage.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="ChiefMage.com">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="ChiefMage.com" src="">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ChiefMage">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
-  </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ChiefMage.com">
+    </span>
 
     
       <header class="post-header">
@@ -539,22 +537,20 @@
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-11T15:06:43+08:00">
-              2017-01-11
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-11T15:06:43+08:00">
+                2017-01-11
+              </time>
+            
 
-            &nbsp;|&nbsp;
+            
 
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-check-o"></i>
-            </span>
-            <time title="Post modified" itemprop="dateModified" datetime="2017-01-11T16:31:33+08:00">
-              2017-01-11
-            </time>
             
           </span>
 
@@ -565,12 +561,12 @@
           
 
           
-
-          
           
 
           
+
           
+
           
 
         </div>
@@ -586,15 +582,25 @@
       
         
           
-          有时候官方提供的基础镜像不能满足我们的需要，这就要我们自己来构建我们自己的镜像，介绍一下如何使用dockerfile构建自定义镜像。Dockerfile是由一系列命令和参数构成的脚本，这些命令应用于基
-          ...
-          <!--noindex-->
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2017/01/11/使用dockerfile构建镜像/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+            <p>有时候官方提供的基础镜像不能满足我们的需要，这就要我们自己来构建我们自己的镜像，介绍一下如何使用dockerfile构建自定义镜像。Dockerfile是由一系列命令和参数构成的脚本，这些命令应用于基础镜像并最终创建一个新的镜像。它们简化了从头到尾的流程并极大的简化了部署工作。Docker程序将读取Dockerfile，根据命令生成自定义的镜像。</p>
+<h1 id="Dockerfile语法"><a href="#Dockerfile语法" class="headerlink" title="Dockerfile语法"></a>Dockerfile语法</h1><p>Dockerfile语法由两部分构成，注释和命令+参数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">command argument argument ..</div></pre></td></tr></table></figure></p>
+<p>举个例子<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># 使用ubuntu基础镜像</div><div class="line">FROM ubuntu</div></pre></td></tr></table></figure></p>
+<h1 id="Dokcerfile命令"><a href="#Dokcerfile命令" class="headerlink" title="Dokcerfile命令"></a>Dokcerfile命令</h1><p>Dockerfile有十几条命令用于构建镜像，下面对这些命令简单的介绍一下。在写Dockerfile命令时不区分大小写，但是建议使用大写。</p>
+<h3 id="FROM"><a href="#FROM" class="headerlink" title="FROM"></a>FROM</h3><p>FROM命令可能是最重要的Dockerfile命令。命令定义了使用哪个基础镜像启动构建流程。基础镜像可以为任意镜像。如果本地没有该基础镜像，Docker将会从仓库下载该镜像。FROM命令必须是Dockerfile的首个命令。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># Usage: FROM [image name]</div><div class="line">FROM unbuntu:15.10</div></pre></td></tr></table></figure></p>
+<h3 id="MAINTAINER"><a href="#MAINTAINER" class="headerlink" title="MAINTAINER"></a>MAINTAINER</h3><p>MAINTAINER命令用于声明作者，一般放在FROM的后面。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># Usage: MAINTAINER [name]</div><div class="line">MAINTAINER chiefmage</div></pre></td></tr></table></figure></p>
+<h3 id="RUN"><a href="#RUN" class="headerlink" title="RUN"></a>RUN</h3><p>构建指令，RUN可以运行基础image支持的命令。如基础镜像选择了ubuntu，那么软件管理部分只能使用ubuntu的命令。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># Usage: RUN [command]</div><div class="line">RUN apt-get install mysql-server</div></pre></td></tr></table></figure></p>
+<h3 id="CMD"><a href="#CMD" class="headerlink" title="CMD"></a>CMD</h3><p>和RUN命令相似，CMD可以用于执行特定的命令。和RUN不同的是，这些命令不是在镜像构建的过程中执行的，而是在用容器启动时执行的。该指令只能在文件中存在一次，如果有多个，则只执行最后一条。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># Usage 1: CMD application &quot;argument&quot;, &quot;argument&quot;, ..</div><div class="line">CMD &quot;echo&quot; &quot;Hello docker!&quot;</div></pre></td></tr></table></figure></p>
+<h3 id="ENTRYPOINT"><a href="#ENTRYPOINT" class="headerlink" title="ENTRYPOINT"></a>ENTRYPOINT</h3><p>指定容器启动时执行的命令，可以多次设置，但是只有最后一个有效。如果你结合CMD命令和ENTRYPOINT命令，你可以从CMD命令中移除“application”而仅仅保留参数，参数将传递给ENTRYPOINT命令。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ENTRYPOINT echo</div><div class="line">CMD &quot;Hello docker!&quot;</div><div class="line">ENTRYPOINT echo</div></pre></td></tr></table></figure></p>
+<h3 id="ADD"><a href="#ADD" class="headerlink" title="ADD"></a>ADD</h3><p>ADD命令有两个参数，源和目标。它的基本作用是从源系统的文件系统上复制文件到目标容器的文件系统。如果源是一个URL，那该URL的内容将被下载并复制到容器中。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ADD /test.tar.gz /app/</div></pre></td></tr></table></figure></p>
+<h3 id="ENV"><a href="#ENV" class="headerlink" title="ENV"></a>ENV</h3><p>在镜像中设置一个环境变量。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ENV SERVER_WORKS 4</div></pre></td></tr></table></figure></p>
+<h3 id="VOLUME"><a href="#VOLUME" class="headerlink" title="VOLUME"></a>VOLUME</h3><p>VOLUME命令用于让你的容器访问宿主机上的目录。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">VOLUME [&quot;/app/log&quot;]</div></pre></td></tr></table></figure></p>
+<h3 id="EXPOSE"><a href="#EXPOSE" class="headerlink" title="EXPOSE"></a>EXPOSE</h3><p>EXPOSE用来指定端口，将容器中的端口映射成宿主机器中的某个端口,使容器内的应用可以通过端口和外界交互。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">EXPOSE 8080</div></pre></td></tr></table></figure></p>
+<h3 id="USER"><a href="#USER" class="headerlink" title="USER"></a>USER</h3><p>USER命令用于设置运行容器的用户名或UID。默认为root。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">USER chiefmage</div></pre></td></tr></table></figure></p>
+<h3 id="WORKDIR"><a href="#WORKDIR" class="headerlink" title="WORKDIR"></a>WORKDIR</h3><p>WORKDIR命令用于设置命令的运行目录,对RUN,CMD,ENTRYPOINT生效。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">WORKDIR ~/</div></pre></td></tr></table></figure></p>
+<h1 id="构建镜像"><a href="#构建镜像" class="headerlink" title="构建镜像"></a>构建镜像</h1><p>写好dockerfile后可以使用如下命令构建镜像。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker build -t my_image .</div></pre></td></tr></table></figure></p>
+<p>构建好镜像就可以使用该镜像启动容器了。</p>
+
+          
         
       
     </div>
@@ -607,8 +613,13 @@
       
     </div>
 
+    <div>
+      
+    </div>
 
     <footer class="post-footer">
+      
+
       
 
       
@@ -631,20 +642,17 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/24/docker常用命令/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/24/docker常用命令/">
 
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="ChiefMage">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="http://ofsr2czi9.bkt.clouddn.com/chiefmage.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="ChiefMage.com">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="ChiefMage.com" src="">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ChiefMage">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
-  </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ChiefMage.com">
+    </span>
 
     
       <header class="post-header">
@@ -666,22 +674,20 @@
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-24T14:53:42+08:00">
-              2016-12-24
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-24T14:53:42+08:00">
+                2016-12-24
+              </time>
+            
 
-            &nbsp;|&nbsp;
+            
 
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-check-o"></i>
-            </span>
-            <time title="Post modified" itemprop="dateModified" datetime="2016-12-24T14:55:56+08:00">
-              2016-12-24
-            </time>
             
           </span>
 
@@ -692,12 +698,12 @@
           
 
           
-
-          
           
 
           
+
           
+
           
 
         </div>
@@ -713,16 +719,22 @@
       
         
           
-          经过了一段时间的使用，对Docker的基础以及常用的命令也了解了一下，现在就总结一下这些常用的命令。
-Docker镜像镜像列表使用docker images命令可以列出本地主机上的镜像。123456r
-          ...
-          <!--noindex-->
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/12/24/docker常用命令/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+            <p>经过了一段时间的使用，对Docker的基础以及常用的命令也了解了一下，现在就总结一下这些常用的命令。</p>
+<h2 id="Docker镜像"><a href="#Docker镜像" class="headerlink" title="Docker镜像"></a>Docker镜像</h2><h3 id="镜像列表"><a href="#镜像列表" class="headerlink" title="镜像列表"></a>镜像列表</h3><p>使用docker images命令可以列出本地主机上的镜像。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">root@ubuntu:~# docker images  </div><div class="line">REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE  </div><div class="line">mysql               latest              57324e4c31c0        8 days ago          584.8 MB  </div><div class="line">debian              jessie              19134a8202e7        10 days ago         123.1 MB  </div><div class="line">centos              centos6             8315978ceaaa        7 weeks ago         194.6 MB  </div><div class="line">hello-world         latest              c54a2cc56cbb        5 months ago        1.848 kB</div></pre></td></tr></table></figure></p>
+<h3 id="查找镜像"><a href="#查找镜像" class="headerlink" title="查找镜像"></a>查找镜像</h3><p>使用docker search命令从Docker Hub来查找镜像。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">root@ubuntu:~# docker search ubuntu</div><div class="line">NAME                              DESCRIPTION                                     STARS     OFFICIAL   AUTOMATED</div><div class="line">ubuntu                            Ubuntu is a Debian-based Linux operating s...   5252      [OK]       </div><div class="line">ubuntu-upstart                    Upstart is an event-based replacement for ...   69        [OK]       </div><div class="line">rastasheep/ubuntu-sshd            Dockerized SSH service, built on top of of...   60                   [OK]</div><div class="line">ubuntu-debootstrap                debootstrap --variant=minbase --components...   27        [OK]       </div><div class="line">torusware/speedus-ubuntu          Always updated official Ubuntu docker imag...   27                   [OK]</div><div class="line">nickistre/ubuntu-lamp             LAMP server on Ubuntu                           13                   [OK]</div><div class="line">nuagebec/ubuntu                   Simple always updated Ubuntu docker images...   12                   [OK]</div><div class="line">nickistre/ubuntu-lamp-wordpress   LAMP on Ubuntu with wp-cli installed            8                    [OK]</div></pre></td></tr></table></figure></p>
+<h3 id="获取镜像"><a href="#获取镜像" class="headerlink" title="获取镜像"></a>获取镜像</h3><p>使用docker pull命令来获取一个官方镜像，如果指明tag，比如Ubuntu:15.10，会拉取指定镜像，如果没有指明tag，则默认拉取latest镜像。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">root@ubuntu:~# docker pull ubuntu</div><div class="line">Using default tag: latest</div><div class="line">latest: Pulling from library/ubuntu</div><div class="line">b3e1c725a85f: Pull complete </div><div class="line">4daad8bdde31: Pull complete </div><div class="line">63fe8c0068a8: Pull complete </div><div class="line">4a70713c436f: Pull complete </div><div class="line">bd842a2105a8: Pull complete </div><div class="line">Digest: sha256:7a64bc9c8843b0a8c8b8a7e4715b7615e4e1b0d8ca3c7e7a76ec8250899c397a</div><div class="line">Status: Downloaded newer image for ubuntu:latest</div></pre></td></tr></table></figure></p>
+<p>我们还可以使用Dockerfile指令来自己创建一个镜像，这个下次再详细介绍。</p>
+<h2 id="docker容器"><a href="#docker容器" class="headerlink" title="docker容器"></a>docker容器</h2><h3 id="启动容器"><a href="#启动容器" class="headerlink" title="启动容器"></a>启动容器</h3><p>启动容器包括基于镜像创建一个容器并启动和启动一个处于stopped状态的已有容器。<br>新建容器的命令主要使用docker run。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">root@ubuntu:~# docker run ubuntu /bin/echo &apos;Hello world&apos;</div><div class="line">Hello world</div></pre></td></tr></table></figure></p>
+<p>我们可以使用-t -i选项启动一个允许与用户交互的容器，还可以使用-d选项让容器在后台运行，具体各参数用法，大家可以是docker run –help命令查看帮助。<br>启动一个处于stopped状态的容器命令是docker start命令。</p>
+<h3 id="查看正在运行的容器"><a href="#查看正在运行的容器" class="headerlink" title="查看正在运行的容器"></a>查看正在运行的容器</h3><p>使用docker ps命令可以列出正在运行的docker容器，使用-a选项还可以列出处于Exited状态即已经退出的容器。</p>
+<h3 id="查看容器应用运行日志"><a href="#查看容器应用运行日志" class="headerlink" title="查看容器应用运行日志"></a>查看容器应用运行日志</h3><p>使用docker logs 命令来查看应用运行日志。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">root@ubuntu:~# docker logs 3714</div><div class="line"></div><div class="line">Hello from Docker!</div><div class="line">This message shows that your installation appears to be working correctly.</div></pre></td></tr></table></figure></p>
+<h3 id="停止容器"><a href="#停止容器" class="headerlink" title="停止容器"></a>停止容器</h3><p>使用docker stop命令停止一个正在运行的容器。</p>
+<h3 id="删除应用容器"><a href="#删除应用容器" class="headerlink" title="删除应用容器"></a>删除应用容器</h3><p>使用 docker rm命令删除一个容器，该容器必须处于停止状态，否则会报错。</p>
+<h3 id="进入容器"><a href="#进入容器" class="headerlink" title="进入容器"></a>进入容器</h3><p>如果我们想进入一个在后台运行的容器，有以下几种方法：<br>1.使用docker attach命令，但是他有一个缺点，当多个窗口同时attach到同一个容器的时候，所有窗口都会同步显示。当某个窗口因命令阻塞时,其他窗口也无法执行操作。而且使用exit命令退出后台后，容器也会退出后台运行。<br>2.使用docker exec命令。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">root@ubuntu:~# docker exec -it mysql /bin/bash</div><div class="line">[root@27c3b5532981 /]#</div></pre></td></tr></table></figure></p>
+<p>这样就进入了容器，可以进行操作。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>一些常用的docker命令就先介绍这些，docker其实一点都不复杂，而且很轻量，容器都是随用随手创建一个，比用虚拟机好多了。个人感觉还蛮好玩的，有兴趣的可以折腾一下。有时间再总结一下使用dockerfile创建容器，看心情吧。<br>突然想起今晚是平安夜,祝自己圣诞节快乐！！</p>
+
+          
         
       
     </div>
@@ -735,8 +747,13 @@ Docker镜像镜像列表使用docker images命令可以列出本地主机上的�
       
     </div>
 
+    <div>
+      
+    </div>
 
     <footer class="post-footer">
+      
+
       
 
       
@@ -759,20 +776,17 @@ Docker镜像镜像列表使用docker images命令可以列出本地主机上的�
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/23/docker初探/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/23/docker初探/">
 
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="ChiefMage">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="http://ofsr2czi9.bkt.clouddn.com/chiefmage.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="ChiefMage.com">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="ChiefMage.com" src="">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ChiefMage">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
-  </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ChiefMage.com">
+    </span>
 
     
       <header class="post-header">
@@ -794,22 +808,20 @@ Docker镜像镜像列表使用docker images命令可以列出本地主机上的�
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-23T09:40:15+08:00">
-              2016-12-23
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-23T09:40:15+08:00">
+                2016-12-23
+              </time>
+            
 
-            &nbsp;|&nbsp;
+            
 
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-check-o"></i>
-            </span>
-            <time title="Post modified" itemprop="dateModified" datetime="2016-12-30T10:22:20+08:00">
-              2016-12-30
-            </time>
             
           </span>
 
@@ -820,12 +832,12 @@ Docker镜像镜像列表使用docker images命令可以列出本地主机上的�
           
 
           
-
-          
           
 
           
+
           
+
           
 
         </div>
@@ -841,17 +853,19 @@ Docker镜像镜像列表使用docker images命令可以列出本地主机上的�
       
         
           
-          Docker最近貌似很火的样子，本着生命在于折腾的态度，我也来玩一玩。在开始玩了一下之后，感觉Docker还真不错，先看一下Docker到底是什么东西。
+            <p>Docker最近貌似很火的样子，本着生命在于折腾的态度，我也来玩一玩。在开始玩了一下之后，感觉Docker还真不错，先看一下Docker到底是什么东西。</p>
+<blockquote>
+<p>Docker是一个开源的应用容器引擎，基于 Go 语言 并遵从Apache2.0协议开源。Docker可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的Linux机器上，也可以实现虚拟化。容器是完全使用沙箱机制，相互之间不会有任何接口,更重要的是容器性能开销极低。</p>
+</blockquote>
+<p>下面把docker的配置安装以及常用命令简单介绍一下。本人用的是ubuntu14.04 64位系统，其他版本的linux系统只是安装命令稍有差距。</p>
+<h3 id="Docker下载安装"><a href="#Docker下载安装" class="headerlink" title="Docker下载安装"></a>Docker下载安装</h3><p>首先Docker要求Ubuntu系统的内核版本高于3.10，你需要先验证你的Ubuntu版本是否支持Docker。ubuntu自带Docker，可以直接安装使用，但是使用的版本较低，所以我们不推荐使用自带的，我们去获取最新的版本（本人可能有强迫症，只要新版不存在重大bug的情况下，都是喜欢用新版本~~）。输入以下命令来获取最新的Docker。<code>wget -qO- https://get.docker.com/ | sh</code>，然后就会下载docker及其依赖包。如果没有错误提示应该就安装成功了。</p>
+<h3 id="启动docker后台服务"><a href="#启动docker后台服务" class="headerlink" title="启动docker后台服务"></a>启动docker后台服务</h3><p>输入以下命令启动服务，<code>sudo service docker start</code>启动完成后可以使用ps命令查看docker运行情况。然后可以运行hello-world，输入以下命令，<code>docker run hello-world</code>,如果出现如下提示，</p>
+<blockquote>
+<p>Hello from Docker!<br>This message shows that your installation appears to be working correctly.</p>
+</blockquote>
+<p>说明你的docker已经完美运行起来了，可以愉快进行下一步了。</p>
 
-Docker是一个开源的应用容器引擎，基于 
-          ...
-          <!--noindex-->
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/12/23/docker初探/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+          
         
       
     </div>
@@ -864,8 +878,13 @@ Docker是一个开源的应用容器引擎，基于
       
     </div>
 
+    <div>
+      
+    </div>
 
     <footer class="post-footer">
+      
+
       
 
       
@@ -916,24 +935,31 @@ Docker是一个开源的应用容器引擎，基于
       <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="http://ofsr2czi9.bkt.clouddn.com/chiefmage.jpg"
+               src="/images/avatar.gif"
                alt="ChiefMage" />
           <p class="site-author-name" itemprop="name">ChiefMage</p>
-          <p class="site-description motion-element" itemprop="description">One More Ounce</p>
+           
+              <p class="site-description motion-element" itemprop="description">One More Ounce</p>
+          
         </div>
         <nav class="site-state motion-element">
-          <div class="site-state-item site-state-posts">
-            <a href="/archives">
-              <span class="site-state-item-count">13</span>
-              <span class="site-state-item-name">日志</span>
-            </a>
-          </div>
 
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
           
 
           
+
+          
+            
+            
             <div class="site-state-item site-state-tags">
-              <a href="/tags">
+              <a href="/tags/index.html">
                 <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">标签</span>
               </a>
@@ -946,17 +972,6 @@ Docker是一个开源的应用容器引擎，基于
 
         <div class="links-of-author motion-element">
           
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/ChiefMage" target="_blank" title="GitHub">
-                  
-                    <i class="fa fa-fw fa-github"></i>
-                  
-                  GitHub
-                </a>
-              </span>
-            
-          
         </div>
 
         
@@ -964,33 +979,13 @@ Docker是一个开源的应用容器引擎，基于
 
         
         
-          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
-            <div class="links-of-blogroll-title">
-              <i class="fa  fa-fw fa-globe"></i>
-              Links
-            </div>
-            <ul class="links-of-blogroll-list">
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://www.golangtc.com/" title="Golang中国" target="_blank">Golang中国</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="https://gocn.io/" title="gocn" target="_blank">gocn</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://www.lcpeng.cn/" title="小李子" target="_blank">小李子</a>
-                </li>
-              
-            </ul>
-          </div>
-        
 
         
 
 
       </section>
+
+      
 
       
 
@@ -1022,7 +1017,7 @@ Docker是一个开源的应用容器引擎，基于
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
+    NexT.Muse
   </a>
 </div>
 
@@ -1033,9 +1028,13 @@ Docker是一个开源的应用容器引擎，基于
       </div>
     </footer>
 
-    <div class="back-to-top">
-      <i class="fa fa-arrow-up"></i>
-    </div>
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
   </div>
 
   
@@ -1058,23 +1057,26 @@ Docker是一个开源的应用容器引擎，基于
 
 
 
-  
-  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+
 
   
-  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
 
   
-  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
 
   
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
 
   
-  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
 
   
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
 
   
@@ -1088,13 +1090,6 @@ Docker是一个开源的应用容器引擎，基于
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
-
-
 
   
 
@@ -1119,16 +1114,39 @@ Docker是一个开源的应用容器引擎，基于
 
 
 
+
   
+
+
+
+
+
   
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
 
   
 
   
 
   
-  
 
+  
 
 </body>
 </html>
